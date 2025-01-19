@@ -34,7 +34,9 @@ def page_logout():
 def authenticate():
     # Intenta recuperar la URL base del frontend desde el encabezado Referer
     request_headers = st.query_params  # Permite obtener parámetros desde la URL
-    frontend_url = request_headers.get("frontend_url", ["http://localhost:8501"])[0]
+
+    frontend_url = "https://ct9pqyv2ovbvkhtlg5vxuk.streamlit.app/"
+    #frontend_url = request_headers.get("frontend_url", ["http://localhost:8501"])[0]
 
     auth_url = f"{BACKEND_URL}/auth/login?frontend_url={frontend_url}"
     st.markdown(f'<a href="{auth_url}" target="_self">Iniciar sesión con Google</a>', unsafe_allow_html=True)
